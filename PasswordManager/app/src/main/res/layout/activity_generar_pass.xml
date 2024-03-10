@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".GenerarPass.GenerarPass">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitud de la Contraseña:" />
+
+    <EditText
+        android:id="@+id/edtLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Longitud"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <CheckBox
+        android:id="@+id/opcTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar todas las opciones" />
+    <CheckBox
+        android:id="@+id/mayus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir Mayúsculas" />
+
+    <CheckBox
+        android:id="@+id/minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir Minúsculas" />
+
+    <CheckBox
+        android:id="@+id/numeros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir Números" />
+
+    <CheckBox
+        android:id="@+id/caracteres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incluir Caracteres Especiales" />
+
+    <EditText
+        android:id="@+id/agregarcaracter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Agregar"
+        android:textSize="20sp"
+        android:visibility="gone"
+        />
+
+    <CheckBox
+        android:id="@+id/Excluircaracteres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Excluit Caracteres Especiales" />
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:id="@+id/removecaracter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quitar:"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/btnGenerar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generar Contraseña" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contraseña Generada:"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/txtGeneratedPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:id="@+id/btnCopiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="copiarAlPortapapeles"
+        android:text="Copiar al portapapeles" />
+
+</LinearLayout>
