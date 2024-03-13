@@ -26,5 +26,19 @@ class LoginActivity : AppCompatActivity() {
         editTextNameUser = findViewById(R.id.editTextNameUser)
         editTextPassword = findViewById(R.id.editTextPassword)
 
+        //SE HABLA A CLASE
+        val Fingerprint = FingerPrint()
+
+        buttonLogin.setOnClickListener(){
+            if(editTextNameUser.text.toString() == "Lucio" && editTextPassword.text.toString() == "1234"){
+                Fingerprint.checkDevice(this)
+            }else{
+                //si los datos no son correctos
+                Toast.makeText(this, "Credendiales incorrectas",
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+
     }
 }
