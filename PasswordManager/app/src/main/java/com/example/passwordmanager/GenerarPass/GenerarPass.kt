@@ -9,11 +9,16 @@ import com.example.passwordmanager.R
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.passwordmanager.BdPassword.Contrasenas
+import com.example.passwordmanager.BdPassword.ContraseñasCrud
+import com.example.passwordmanager.BdPassword.MyDatabaseHelper
+import com.example.passwordmanager.ListaDeContrasenas
 import java.security.SecureRandom
 
 class GenerarPass : AppCompatActivity() {
@@ -48,6 +53,10 @@ class GenerarPass : AppCompatActivity() {
     private lateinit var removecaracter: EditText
 
     private lateinit var textview2: TextView
+
+    //Boton para ver contraseñas
+    private lateinit var btnVerContrasenas: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -73,7 +82,11 @@ class GenerarPass : AppCompatActivity() {
             textview2 = findViewById(R.id.textview2)
 
             textview2.text = ("!@#$%^&*()_-+=<>?")
-
+            btnVerContrasenas = findViewById(R.id.btnVerContrasenas)
+            btnVerContrasenas.setOnClickListener {
+                val intent = Intent(this@GenerarPass, ListaDeContrasenas::class.java)
+                startActivity(intent)
+            }
             btnGenerar.setOnClickListener {
                 generatePassword()
             }
@@ -148,6 +161,12 @@ class GenerarPass : AppCompatActivity() {
                     removecaracter.text.toString()
                 )
                 txtgenerarpass.text = "$password"
+
+                //Insertar la contraseña en una base de datos para generar un el historial
+                val myDataClassDao = ContraseñasCrud(MyDatabaseHelper(this))
+                val liveData = myDataClassDao.insertOne(Contrasenas(0,
+                    ByteArray(0),"contraseña","url","usuario","$password","nota"))
+
             }
         }
     }
