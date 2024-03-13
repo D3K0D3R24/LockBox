@@ -89,6 +89,14 @@
         android:layout_height="wrap_content"
         android:text="Generar Contraseña" />
 
+    <Button
+        android:id="@+id/btnCopiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="copiarAlPortapapeles"
+        android:text="Copiar al portapapeles" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -105,11 +113,10 @@
         />
 
     <Button
-        android:id="@+id/btnCopiar"
+        android:id="@+id/btnVerContrasenas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:onClick="copiarAlPortapapeles"
-        android:text="Copiar al portapapeles" />
+        android:text="Ver Historial De Contrseñas Generadas" />
 
 </LinearLayout>
