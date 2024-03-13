@@ -125,13 +125,7 @@ class GenerarPass : AppCompatActivity() {
             return
         } else {
 
-            val casillasSeleccionadas = listOf(
-                checkmayus,
-                checkminus,
-                checknum,
-                checkcaracter,
-                excheckcaracter
-            ).any { it.isChecked }
+            val casillasSeleccionadas = listOf(checkmayus, checkminus, checknum, checkcaracter, excheckcaracter).any { it.isChecked }
             if (!casillasSeleccionadas) {
                 Toast.makeText(this, "Seleccione al menos una casilla", Toast.LENGTH_SHORT)
                     .show()
