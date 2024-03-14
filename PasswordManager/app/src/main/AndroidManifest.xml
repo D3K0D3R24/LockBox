@@ -15,9 +15,12 @@
         android:theme="@style/Theme.PasswordManager"
         tools:targetApi="31">
         <activity
-            android:name=".Ui.AddPasswordActivity.AddPasswordActivity"
-            android:windowSoftInputMode="adjustPan"
+            android:name=".Historial_de_Password"
             android:exported="false" />
+        <activity
+            android:name=".Ui.AddPasswordActivity.AddPasswordActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".GenerarPass.GenerarPass"
             android:exported="false" />
@@ -25,12 +28,12 @@
             android:name=".Ui.LoginActivity.LoginActivity"
             android:exported="false"
             android:label="@string/title_activity_login"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:theme="@style/Theme.PasswordManager" />
+            android:theme="@style/Theme.PasswordManager"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
