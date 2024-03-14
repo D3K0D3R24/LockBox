@@ -60,6 +60,5 @@ class ListaDeContrasenas : AppCompatActivity() {
 
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
-
     }
 }
