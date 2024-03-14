@@ -22,8 +22,7 @@ class ContraseñasCrud(private val database: MyDatabaseHelper) {
         return liveData
     }
 
-    //funcion para obtener todas las contraseñas
-    fun findAll(): List<Contrasenas> {
+    fun findAll(): MutableList<Contrasenas> {
         val dataList = mutableListOf<Contrasenas>()
         val cursor = database.readableDatabase.query("Contrasenas", null, null, null, null, null, null)
         while (cursor.moveToNext()) {
@@ -39,6 +38,24 @@ class ContraseñasCrud(private val database: MyDatabaseHelper) {
         cursor.close()
         return dataList
     }
+
+    //funcion para obtener todas las contraseñas
+//    fun findAll(): List<Contrasenas> {
+//        val dataList = mutableListOf<Contrasenas>()
+//        val cursor = database.readableDatabase.query("Contrasenas", null, null, null, null, null, null)
+//        while (cursor.moveToNext()) {
+//            val id = cursor.getInt(0)
+//            val image = cursor.getBlob(1)
+//            val title = cursor.getString(2)
+//            val url = cursor.getString(3)
+//            val username = cursor.getString(4)
+//            val password = cursor.getString(5)
+//            val note = cursor.getString(6)
+//            dataList.add(Contrasenas(id, image, title, url, username, password, note))
+//        }
+//        cursor.close()
+//        return dataList
+//    }
 
 
 

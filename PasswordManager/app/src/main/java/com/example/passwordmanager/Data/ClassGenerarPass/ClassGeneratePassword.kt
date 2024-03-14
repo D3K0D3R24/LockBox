@@ -38,29 +38,32 @@ class ClassGeneratePassword(private val context: Context) {
         if (includeNumbers) charset.append("0123456789")
         //Utiliza este apartado para eliminar los caracteres en el editext
         if (includeSimbolsChars) charset.append("!@#$%^&*()_-+=<>?")
-        if (excluircaracter)
-        {
-            charset.append(excludecaracter)
+        if(caracteresIncluidos.toString()!=excludecaracter.toString()) {
+            if (excluircaracter) {
+                charset.append(excludecaracter)
+            }
+
+            val customChars = caracteresIncluidos
+            if (includeSpecialChars) {
+                if (customChars!!.isNotEmpty()) {
+                    charset.append(customChars)
+                } else {
+                    charset.append("!@#$%^&*()_-+=<>?")
+                }
+            }
+        }else{
+            println("Al menos una opción está seleccionada")
         }
 
-        val customChars = caracteresIncluidos
-        if (includeSpecialChars)
-        {
-            if (customChars!!.isNotEmpty())
-            {
-                charset.append(customChars)
-            }
-            else
-            {
-                charset.append("!@#$%^&*()_-+=<>?")
-            }
-        }
         val filteredCharset = StringBuilder(charset.toString()).filterNot { excludecaracter?.contains(it) ?:false }
 
         val random = SecureRandom()
         val password = StringBuilder()
-        repeat(length) {
+        if (filteredCharset.isNotEmpty()){
+            //Toast.makeText(context, filteredCharset, Toast.LENGTH_SHORT).show()
+            repeat(length) {
             password.append(filteredCharset[random.nextInt(filteredCharset.length)])
+            }
         }
         caracteresIncluidos?.let { incluidos ->
             val incluidosList = incluidos.toList()

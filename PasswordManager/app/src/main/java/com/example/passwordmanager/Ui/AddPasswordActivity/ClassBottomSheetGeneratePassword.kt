@@ -52,6 +52,7 @@ class ClassBottomSheetGeneratePassword(private val contexto: Context): BottomShe
         view = inflater.inflate(R.layout.generate_password_layout,container,false)
         return view
     }
+
     override fun onStart() {
         super.onStart()
         //Agregar o referenciar la clase: ClassGeneratePassword
