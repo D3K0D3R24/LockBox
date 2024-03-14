@@ -3,7 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#6076F5</color>
-    <color name="background">#E3DFE4</color>
+    <color name="background">#EDE7EE</color>
     <color name="borderColor">#AAA9AB</color>
     <color name="colorIconsEditText">#777679</color>
+    <color name="transparent">#00777679</color>
 </resources>

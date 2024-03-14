@@ -1,0 +1,9 @@
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/white"> <!-- Color de resaltado de la animación de ondulación predeterminada -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="250dp" /> <!-- Ajusta el radio según el nivel de redondez deseado -->
+            <solid android:color="@color/blue" /> <!-- Fondo transparente -->
+        </shape>
+    </item>
+</ripple>
