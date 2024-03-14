@@ -59,8 +59,11 @@ class ClassGeneratePassword(private val context: Context) {
 
         val random = SecureRandom()
         val password = StringBuilder()
-        repeat(length) {
+        if (filteredCharset.isNotEmpty()){
+            //Toast.makeText(context, filteredCharset, Toast.LENGTH_SHORT).show()
+            repeat(length) {
             password.append(filteredCharset[random.nextInt(filteredCharset.length)])
+            }
         }
         caracteresIncluidos?.let { incluidos ->
             val incluidosList = incluidos.toList()
