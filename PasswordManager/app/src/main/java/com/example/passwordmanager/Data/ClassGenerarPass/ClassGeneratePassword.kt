@@ -38,23 +38,23 @@ class ClassGeneratePassword(private val context: Context) {
         if (includeNumbers) charset.append("0123456789")
         //Utiliza este apartado para eliminar los caracteres en el editext
         if (includeSimbolsChars) charset.append("!@#$%^&*()_-+=<>?")
-        if (excluircaracter)
-        {
-            charset.append(excludecaracter)
+        if(caracteresIncluidos.toString()!=excludecaracter.toString()) {
+            if (excluircaracter) {
+                charset.append(excludecaracter)
+            }
+
+            val customChars = caracteresIncluidos
+            if (includeSpecialChars) {
+                if (customChars!!.isNotEmpty()) {
+                    charset.append(customChars)
+                } else {
+                    charset.append("!@#$%^&*()_-+=<>?")
+                }
+            }
+        }else{
+            println("Al menos una opción está seleccionada")
         }
 
-        val customChars = caracteresIncluidos
-        if (includeSpecialChars)
-        {
-            if (customChars!!.isNotEmpty())
-            {
-                charset.append(customChars)
-            }
-            else
-            {
-                charset.append("!@#$%^&*()_-+=<>?")
-            }
-        }
         val filteredCharset = StringBuilder(charset.toString()).filterNot { excludecaracter?.contains(it) ?:false }
 
         val random = SecureRandom()
