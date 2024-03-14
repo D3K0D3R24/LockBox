@@ -7,9 +7,6 @@ import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
-import com.example.passwordmanager.GenerarPass.GenerarPass
-import com.example.passwordmanager.ListaDeContrasenas
-import com.example.passwordmanager.Ui.AddPasswordActivity.AddPasswordActivity
 
 import java.util.concurrent.Executor
 
@@ -50,10 +47,11 @@ class FingerPrint {
                             Toast.makeText(contexto,
                                 "Bienvenido!", Toast.LENGTH_SHORT)
                                 .show()
+
                             //Abro la otra Activity
                             //AQUI SE PONE EL CODIGO PARA INGRESAR A LA OTRA ACTIVITY
-                            val intent = Intent(contexto, AddPasswordActivity::class.java)
-                            contexto.startActivity(intent)
+                           // val intent = Intent(contexto, GenerarPass::class.java)
+                           // contexto.startActivity(intent)
                         }
 
                         /*SI FALLO LA LECTURA DE LA HUELLA*/
@@ -66,6 +64,7 @@ class FingerPrint {
                         }
                     })
             }
+
             BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE ->
                 Toast.makeText(contexto, "No mi chavo no puedes",
                     Toast.LENGTH_SHORT)
