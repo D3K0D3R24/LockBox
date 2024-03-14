@@ -11,10 +11,11 @@ import com.example.passwordmanager.Ui.LoginActivity.LoginActivity
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         // Codigo que se uso para probar el activity del login
-        val intent = Intent(this@MainActivity, AddPasswordActivity::class.java)
-        startActivity(intent)
+
+        // val intent = Intent(this@MainActivity, LoginActivity::class.java)
+        //startActivity(intent)
     }
 }

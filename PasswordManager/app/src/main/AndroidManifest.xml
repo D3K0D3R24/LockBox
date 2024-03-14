@@ -26,19 +26,24 @@
             android:exported="false" />
         <activity
             android:name=".Ui.LoginActivity.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.PasswordManager"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:theme="@style/Theme.PasswordManager">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+
+
+            <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:exported="true">
+
         </activity>
     </application>
 
